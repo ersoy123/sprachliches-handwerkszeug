@@ -6,6 +6,9 @@ const progressFill = document.getElementById("progressFill");
 
 let currentSlide = 0;
 
+const returnUrl =
+  "https://lms.fom.de/course/view.php?id=397&section=6#sprachliches%20Handwerkszeug";
+
 function updateView() {
   slides.forEach((slide, index) => {
     slide.classList.toggle("active", index === currentSlide);
@@ -29,6 +32,8 @@ nextBtn.addEventListener("click", () => {
   if (currentSlide < slides.length - 1) {
     currentSlide++;
     updateView();
+  } else {
+    window.open(returnUrl, "_top");
   }
 });
 
