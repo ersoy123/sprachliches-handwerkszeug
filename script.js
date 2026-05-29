@@ -18,7 +18,12 @@ function updateView() {
   progressFill.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
 
   prevBtn.disabled = currentSlide === 0;
-  nextBtn.textContent = currentSlide === slides.length - 1 ? "Fertig" : "Weiter";
+
+  if (currentSlide === slides.length - 1) {
+    nextBtn.textContent = "Zurück zum Kurs";
+  } else {
+    nextBtn.textContent = "Weiter";
+  }
 }
 
 prevBtn.addEventListener("click", () => {
@@ -33,8 +38,7 @@ nextBtn.addEventListener("click", () => {
     currentSlide++;
     updateView();
   } else {
-    currentSlide = 0;
-updateView();
+    window.open(returnUrl, "_blank");
   }
 });
 
