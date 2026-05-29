@@ -16,6 +16,7 @@ body {
 }
 
 .app {
+  position: relative;
   width: 100%;
   height: 100vh;
   max-width: none;
@@ -29,7 +30,6 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-/* Kopfbereich deutlich kompakter */
 .app-header {
   padding: 10px 18px 9px 18px;
   color: #ffffff;
@@ -58,7 +58,6 @@ body {
   line-height: 1.25;
 }
 
-/* Inhaltsbereich */
 .slides {
   padding: 14px 18px;
   background: #ffffff;
@@ -95,7 +94,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* Lange Liste auf letzter Folie zweispaltig, damit sie in den Frame passt */
 .slide:nth-child(5) ul {
   columns: 2;
   column-gap: 28px;
@@ -129,7 +127,6 @@ a {
   margin-bottom: 0;
 }
 
-/* Buttons bleiben immer sichtbar */
 .controls {
   display: flex;
   align-items: center;
@@ -187,6 +184,77 @@ button:disabled {
   transition: width 0.25s ease;
 }
 
+/* Abschlussfolie */
+.completion-slide {
+  height: 100%;
+}
+
+.completion-card {
+  max-width: 620px;
+  margin: 16px auto 0 auto;
+  padding: 24px 28px;
+  text-align: center;
+  border: 1px solid #f0d27a;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fffdf8 0%, #ffffff 70%);
+}
+
+.completion-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px auto;
+  border-radius: 999px;
+  background: #d9a93a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.completion-card h2 {
+  margin: 0 0 8px 0;
+  color: #b78716;
+  font-size: 1.1rem;
+}
+
+.completion-card p {
+  margin: 0 0 8px 0;
+  line-height: 1.45;
+}
+
+#restartBtn {
+  margin-top: 8px;
+}
+
+/* Konfetti */
+#confettiLayer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.confetti {
+  position: absolute;
+  top: -12px;
+  width: 7px;
+  height: 12px;
+  opacity: 0.95;
+  animation: confetti-fall 1.8s linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(560px) rotate(540deg);
+  }
+}
+
 @media (max-width: 700px) {
   html,
   body {
@@ -213,5 +281,10 @@ button:disabled {
 
   button {
     width: 100%;
+  }
+
+  .completion-card {
+    margin: 8px auto 0 auto;
+    padding: 18px 20px;
   }
 }

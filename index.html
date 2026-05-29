@@ -9,6 +9,7 @@
 <body>
 
   <div class="app">
+
     <header class="app-header">
       <div class="label">Aufgabe</div>
       <h1>Sprachliches Handwerkszeug</h1>
@@ -66,6 +67,16 @@
         </div>
       </section>
 
+      <section class="slide completion-slide">
+        <div class="completion-card">
+          <div class="completion-icon">✓</div>
+          <h2>Aufgabe abgeschlossen</h2>
+          <p>Sie haben die fünf Schritte zur Aufgabe <strong>„Sprachliches Handwerkszeug“</strong> bearbeitet.</p>
+          <p>Nutzen Sie Ihre Notizen, Wortlisten oder syntaktischen Redemittel nun für Ihren eigenen Schreibprozess.</p>
+          <button id="restartBtn" type="button">Aufgabe erneut ansehen</button>
+        </div>
+      </section>
+
     </main>
 
     <footer class="controls">
@@ -80,6 +91,9 @@
 
       <button id="nextBtn" type="button">Weiter</button>
     </footer>
+
+    <div id="confettiLayer" aria-hidden="true"></div>
+
   </div>
 
   <script src="script.js"></script>
