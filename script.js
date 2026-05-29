@@ -33,7 +33,8 @@ nextBtn.addEventListener("click", () => {
     currentSlide++;
     updateView();
   } else {
-    window.open(returnUrl, "_top");
+    currentSlide = 0;
+updateView();
   }
 });
 
